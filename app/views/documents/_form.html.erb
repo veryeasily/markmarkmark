@@ -1,0 +1,36 @@
+<%= simple_form_for(@document) do |form| %>
+  <% if @document.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@document.errors.count, "error") %> prohibited this document from being saved:</h2>
+
+      <ul>
+        <% @document.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.input :file_path %>
+
+  </div>
+
+  <div class="field">
+    <%= form.input :title %>
+
+  </div>
+
+  <div class="field">
+    <%= form.input :date %>
+
+  </div>
+  
+  <%= form.association :tags %>
+  
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+  
+
+<% end %>

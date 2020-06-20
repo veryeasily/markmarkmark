@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+<img class="document__image" src="<%= @document.file_path %>" ></img>
+<p>
+  <strong>File path:</strong>
+  <%= @document.file_path %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @document.title %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @document.date %>
+</p>
+
+<%= link_to 'Edit', edit_document_path(@document) %> |
+<%= link_to 'Back', documents_path %>
